@@ -10,7 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/abe562b248.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <link rel="stylesheet" href="{{ url_for('.static', filename='index.css') }}">
     <title>Autenticação</title>
 </head>
@@ -25,44 +29,7 @@
             <h1>Conteudos aqui</h1>
         </div>
 
-        <div class="signup active">
-            <form id="form-signup">
-                <div class="signup-header">
-                    <h1>Cadastre-se</h1>
-                </div>
-                <div class="body-signup">
-                    <div class="username-container">
-                        <label for="usuario">Username</label>
-                        <input type="text" name="usuario" placeholder="Username" id="usuario" required>
-                    </div>
-                    <div class="email-container">
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
-                    </div>
-                    <div class="senha-container">
-                        <label for="senha">Senha</label>
-                        <div class="container-minor">
-                            <input type="password" name="senha" placeholder="Senha" required>
-                            <i class="fa fa-regular fa-eye senha1"></i>
-                        </div>
-                    </div>
-                    <div class="senha-container">
-                        <label for="confirm">Confirme a senha</label>
-                        <div class="container-minor">
-                            <input type="password" name="confirm" placeholder="Confirme a senha" required>
-                            <i class="fa fa-regular fa-eye senha2"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="terms-signup">
-                    <input type="checkbox" name="termos" id="termos" required>
-                    <label class="termos">Eu aceito os</label><a class="termos" href="#">termos de uso</a>
-                    <input type="submit" class="signup-btn" value="Cadastrar">
-                </div>
-            </form>
-        </div>
-
-        <div class="login">
+        <div class="login inactive">
             <div class="login-header">
                 <h1>Login</h1>
             </div>
@@ -73,9 +40,44 @@
             </form>
         </div>
 
+        <div class="signup active">
+            <form id="form-signup">
+                <div class="signup-header">
+                    <span>Cadastre-se</span>
+                </div>
+                <div class="body-signup">
+                    <div class="username-container">
+                        <input type="text" name="usuario" placeholder="Username" id="usuario" required>
+                    </div>
+                    <div class="email-container">
+                        <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="senha-container">
+                        <div class="container-minor">
+                            <input type="password" id="senha1" name="cad-senha" placeholder="Senha" required>
+                            <i class="fa fa-regular fa-eye fa-senha1" id="icone1"
+                                onclick="togglePassVisibility('senha1', 'icone1')"></i>
+                        </div>
+                    </div>
+                    <div class="senha-container">
+                        <div class="container-minor">
+                            <input type="password" id="senha2" name="cad-confirm" placeholder="Confirme a senha"
+                                required>
+                            <i class="fa fa-regular fa-eye fa-senha2" id="icone2"
+                                onclick="togglePassVisibility('senha2', 'icone2')"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-btns">
+                    <input type="submit" class="signup-btn" value="Cadastrar">
+                    <input type="button" class="login-btn" value="Fazer Login">
+                </div>
+            </form>
+        </div>
 
     </section>
-
+    <script src="{{ url_for('.static', filename='index.js') }}"></script>
 </body>
 
 </html>

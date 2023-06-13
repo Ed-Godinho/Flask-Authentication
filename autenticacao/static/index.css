@@ -20,6 +20,7 @@ body{
     background: var(--imagem-background);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     min-width: 420px;
     height: 100vh;
 }
@@ -52,8 +53,10 @@ header {
 .signup, .login {
     position: absolute;
     right: 0;
-    width: 45%;
+    width: 40%;
+    min-width: 534px;
     height: 80%;
+    min-height: 614px;
     padding: 10px 0;
     display: flex;
     flex-direction: column;
@@ -79,23 +82,30 @@ header {
     padding: 5px 0 15px 0px;
 }
 
+.signup-header > span {
+    color: ghostwhite;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.849);
+    font-size: 30px;
+}
+
 .body-signup {
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     height: 60%;
-    width: 90%;
-    margin: auto;
+    width: 100%;
     padding: 10px;
+}
+.body-signup div{
+    justify-content: center;
+    height: 100%;
 }
 
 label {
-    text-align: right;
-    padding-right: 20px;
-    width: 30%;
     color: ghostwhite;
-    padding-block: 10px;
-    font-weight: 600;
+    font-weight: 500;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.849);
+    text-align: center;
 }
 
 .username-container, .email-container, .senha-container {
@@ -104,12 +114,14 @@ label {
     padding: 15px 0 15px 15px;
     margin: 10px 0;
     text-align: right;
+
 }
 
 .username-container > input, .email-container > input{
     display: flex;
+    border: none;
     width: 65%;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
 
 }
@@ -118,40 +130,154 @@ label {
     width: 65%;
     display: flex;
     align-items: center;
-    gap: 5px;
+    padding-block: 30px;
     background-color: ghostwhite;
     border-radius: 5px;
+    position: relative;
 }
 
 .container-minor > input{
-    width: 90%;
-    padding: 15px;
+    width: 100%;
+    height: 100%;
+    padding: 30px 0 30px 10px;
     border: none;
 }
 
-input{
-    font-size: 15px;;
+.container-minor i {
+    position: absolute;
+    right: 0;
+    width: 8%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #20202015;
+    cursor: pointer;
 }
+
+input:not(div.senha-container input), .container-minor
+{
+ box-shadow: 1px 0px 5px black;
+}
+
+input{
+    font-size: 15px;
+    user-select: none;
+}
+input:focus {
+    outline: none;
+  }
 
 #form-signup, #form-login {
     width: 100%;
     height: 100%;
 }
+
 .termos{
     margin: 0;
     padding-inline: 3px;
-}
-a.termos{
-    font-weight: 700;
-    font-style: italic;
-    text-decoration: none;
-    color: rgb(0, 238, 255);
+    
 }
 
-a:visited {
-    color: rgb(0, 195, 255);
+
+.div-btns {
+    display: flex;
+    flex-direction: column;
+    padding-block: 20px;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+}
+
+.signup-btn {
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: ghostwhite;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgb(184, 182, 182);
+    position: relative;
+}
+
+.login-btn{
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid rgb(184, 182, 182);
+    color: ghostwhite;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.signup-btn:hover, .login-btn:hover {
+    background-color: ghostwhite;
+    color: black;
+    transition: 300ms ease-in-out;
 }
 
 .login {
     z-index: -1;
+}
+
+.inactive {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/*media max-width de 760px*/
+@media (max-width: 760px) {
+    .signup, .login {
+        position: absolute;
+        width: 20%;
+        min-width: 400px;
+        height: 20%;
+        min-height: 650px;
+        /*centraliza na tela*/
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    #form-signup, #form-login {
+        width: 100%;
+        height: 80%;
+    }
+
+    .body-signup{
+        padding: 0;
+        margin: 0;
+    }
+
+    input:not(div.senha-container input), .container-minor
+     {
+      box-shadow: 1px 0px 5px black;
+    }
+
+    .container-minor > input {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container-minor > i {
+        width: 15%;
+    }
+
 }

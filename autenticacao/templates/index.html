@@ -25,18 +25,24 @@
     </header>
 
     <section class="container">
-        <div class="login inactive">
+        <div class="login active">
             <div class="login-header">
                 <h1>Login</h1>
             </div>
             <form id="form-login">
-                <input type="text" name="usuario" placeholder="Usuário" required>
-                <input type="password" name="senha" placeholder="Senha" required>
+                <input type="text" name="usuario" placeholder="Usuário" class="login-user" id="login-user" required>
+                <div class="login-senha">
+                    <input type="password" name="senha" placeholder="Senha" id="login-senha" required><i
+                        class="fa fa-regular fa-eye fa-senha1" id="login-eye"
+                        onclick="togglePassVisibility('login-senha', 'login-eye')"></i>
+                </div>
                 <input type="submit" class="login-btn" value="Entrar">
+                
             </form>
+            <button type="button" class="signup-btn signin" onclick="alternarClasses()">Cadastre-se</button>
         </div>
 
-        <div class="signup active">
+        <div class="signup inactive">
             <form id="form-signup">
                 <div class="signup-header">
                     <span>Cadastre-se</span>

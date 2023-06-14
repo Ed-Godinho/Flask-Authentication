@@ -44,24 +44,18 @@ header {
     min-width: 534px;
     height: 80%;
     min-height: 614px;
-    padding: 10px 0;
+    padding: 10px 20px;
     justify-content: center; /* Centralizar horizontalmente */
     align-items: center; /* Centralizar verticalmente */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.signup {
-    box-shadow: -1px 0px 10px 5px rgba(0, 0, 0, 0.171);
+    box-shadow: -1px 0px 10px 5px rgba(0, 0, 0, 0.205);
     backdrop-filter: blur(15px);
-    border-radius: 10px 0 0 10px;
-    padding-inline: 20px;
-    margin: 0;
     border-radius: 10px;
 }
 
-.signup-header{
+.signup-header, .login-header {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
@@ -83,12 +77,12 @@ header {
     width: 100%;
     padding: 10px;
 }
-.body-signup div{
+.body-signup div {
     justify-content: center;
     height: 100%;
 }
 
-label {
+label, .login-header {
     color: ghostwhite;
     font-weight: 500;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.849);
@@ -142,7 +136,7 @@ label {
     cursor: pointer;
 }
 
-input:not(div.senha-container input), .container-minor
+input:not(div.senha-container input), .container-minor, .login-senha
 {
  box-shadow: 1px 0px 5px black;
 }
@@ -213,6 +207,8 @@ input:focus {
 
 .inactive {
     opacity: 0;
+    transform: translateX(100%);
+    transform: translateY(-50%);
     transition: all 0.5s ease-in-out;
     pointer-events: none;
 }
@@ -221,6 +217,64 @@ input:focus {
     opacity: 1;
     transition: all 0.5s ease-in-out;
 }
+
+.login-header {
+    background-color: rgba(0, 0, 0, 0.568);
+}
+
+#form-login {
+    height: 50%;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#form-login .login-user {
+    width: 50%;
+}
+
+.login-senha{
+    border-radius: 5px;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-login .login-user, .login-senha {
+    width: 70%;
+    padding:10px 10px 10px 10px;
+    background-color: ghostwhite;
+    display: flex;
+    font-size: 18px;
+    border: none;
+}
+
+#login-senha{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 90%;
+}
+
+.login-senha i{
+    width: 10%;
+    padding-left: 5px;
+    height: 100%;
+    margin-left: 2px;
+    display: flex;
+    align-items: right;
+    place-content: center;
+}
+
+.signin{
+    background-color: red;
+    position: absolute;
+    right: 25%;
+}
+
 
 
 /*media max-width de 760px*/

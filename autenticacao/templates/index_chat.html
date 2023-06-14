@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <h1>Acessar Rotas</h1>
+
+    <p>{{ usuario }}</p>
+
+    <button type="button" class="administrador">Painel Administrativo</button>
+    <button type="button" class="Portfolio">Acessar Portfolio</button>
+
+    <button type="button" class="logout">Logout</button>
+    <script>
+        //logout 
+        const logout = document.querySelector('.logout');
+        logout.addEventListener('click', () => {
+            window.location.href = '/logout';
+        });
+
+        //painel administrativo
+        const administrador = document.querySelector('.administrador');
+        administrador.addEventListener('click', () => {
+            window.location.href = '/admin';
+        });
+
+        //chat
+        const portfolio = document.querySelector('.Portfolio');
+        portfolio.addEventListener('click', () => {
+            window.open('https://ederdk.github.io/Portfolio_/',"_blank");
+        });
+
+    </script>
+</body>
+
+</html>

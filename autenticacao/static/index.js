@@ -18,18 +18,14 @@ function alternarClasses() {
     var loginDiv = document.querySelector('.login');
     var signupDiv = document.querySelector('.signup');
     // Alternar as classes após um atraso de 0.5 segundos
+    loginDiv.classList.toggle('inactive');
+    loginDiv.classList.toggle('active');
     signupDiv.classList.toggle('inactive');
     signupDiv.classList.toggle('active');
-    setTimeout(function () {
-        loginDiv.classList.toggle('inactive');
-        loginDiv.classList.toggle('active');
-    }, 500); // 500 milissegundos = 0.5 segundos
 }
 
 
 const cadastro = document.getElementById('form-signup');
-
-
 
 cadastro.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -66,10 +62,8 @@ cadastro.addEventListener('submit', (e) => {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-
                 alert('Cadastro realizado com sucesso');
                 alternarClasses()
-
             } else if (data.exists) {
                 //mostra o return da API
                 alert(data.message);
@@ -82,3 +76,44 @@ cadastro.addEventListener('submit', (e) => {
             alert('Erro na solicitação');
         });
 });
+
+
+const login = document.getElementById('form-login');
+
+login.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    //Dados do login
+    let usuario = document.getElementById('login-user').value;
+    let senha = document.getElementById('login-senha').value;
+
+    let formData = {
+        'username': usuario,
+        'senha': senha
+    };
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(formData)
+    };
+
+    fetch('/login', options)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Login realizado com sucesso');
+                window.location.href = "/chat_index";
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => {
+            console.error("Erro na solicitação", error);
+            alert('Erro na solicitação');
+        });
+}
+);

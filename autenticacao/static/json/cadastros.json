@@ -1,8 +1,1 @@
-{
-    "1": {
-        "usuario": "Eder",
-        "senha": "admin",
-        "email": "edcgodinho@gmail.com"
-    }
-}
-
+{"1": {"username": "Eder", "email": "edcgodinho@gmail.com", "senha": "$pbkdf2-sha256$29000$WgsBwFjrvfceo1TqndMaQw$EopcgHAar6EsFF51dRi.RM5RWXKtaTWd9Ygiar9Qbfc", "cargo": "admin"}, "2": {"username": "Teste", "email": "teste@teste.com", "senha": "$pbkdf2-sha256$29000$ktJaa42RMqaU8j4HYKy1Fg$ZhiEjTtcN0csb.//.GxiwxT6lL87S9GIFFKvL2nxGZU", "cargo": "user"}, "3": {"username": "Administrador", "email": "adm@teste.com", "senha": "$pbkdf2-sha256$29000$gdD6vxfiXEtJyZkz5hwDAA$H032tSEtcWNgkxuavQ6KNK0KKkZ2kyxXr.aqMe2Q/zg", "cargo": "admin"}, "4": {"username": "Usuario", "email": "teste1@teste.com", "senha": "$pbkdf2-sha256$29000$qPW.9z5HCEGoNQbA2LvXeg$pnUe4.eIXldYZpwB7TWY2plXUNLOzwYJ4SvjXrl.r/s", "cargo": "user"}}

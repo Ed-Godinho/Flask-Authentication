@@ -3,10 +3,6 @@
         "usuario": "Eder",
         "senha": "admin",
         "email": "edcgodinho@gmail.com"
-    },
-    "2": {
-        "username": "Admin",
-        "email": "admin@teste.com",
-        "senha": "$pbkdf2-sha256$29000$TEmJkdI6JwTAuFcqZYwxBg$qy39F/HNCW1CM8v/qrW0x/J.QIFDI8f7m2owlLt8e5w"
     }
 }
+

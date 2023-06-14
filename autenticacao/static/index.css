@@ -33,44 +33,31 @@ header {
     overflow: hidden;
     position: relative;
     height: 100%;
+    width: 100%;
     display: flex;
     padding: 20px;
 }
 
-.container > .content {
-    overflow: hidden;
-    width: 50%;
-}
-
-.container-forms {
-    display: flex;
-    position: absolute;
-    height: 80%;
-    width: 75%;
-    right: 0;
-}
-
 .signup, .login {
     position: absolute;
-    right: 0;
     width: 40%;
     min-width: 534px;
     height: 80%;
     min-height: 614px;
     padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .signup {
-    background-color: transparent;
     box-shadow: -1px 0px 10px 5px rgba(0, 0, 0, 0.171);
     backdrop-filter: blur(15px);
     border-radius: 10px 0 0 10px;
     padding-inline: 20px;
     margin: 0;
-    transform: translateX(0);
     border-radius: 10px;
 }
 
@@ -224,18 +211,13 @@ input:focus {
     transition: 300ms ease-in-out;
 }
 
-.login {
-    z-index: -1;
-}
-
 .inactive {
-    transform: translateX(100%);
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    pointer-events: none;
 }
 
 .active {
-    transform: translateX(0);
     opacity: 1;
     transition: all 0.5s ease-in-out;
 }
